@@ -12,7 +12,7 @@ export const Title = styled.Text`
   color: #fff;
 `;
 
-export const Container = styled.ScrollView`
+export const Container = styled.FlatList`
   background-color: #000;
   padding: 0px 4px;
 `;

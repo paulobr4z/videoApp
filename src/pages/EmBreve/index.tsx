@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, FlatList } from 'react-native';
 
 import api from '../../services/api'
 
 import {
   Header,
   Title,
-  Container,
   PosterBlur,
   Poster
 } from './styles';
@@ -39,12 +38,15 @@ export default function Embreve() {
       <Header>
         <Title>Em breve</Title>
       </Header>
-      <Container>
-        {movies.map(movie => (
-          <View key={movie.id.toString()}>
+      <FlatList
+        style={{ backgroundColor: "#000", paddingHorizontal: 4 }}
+        data={movies}
+        keyExtractor={movie => movie.id.toString()}
+        renderItem={({ item: movie }) => (
+          <View>
             <PosterBlur
-              blurRadius={5}
-              source={{ uri: `https://image.tmdb.org/t/p/original/${movie.backdrop_path}` }}
+              blurRadius={1}
+              source={{ uri: `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}` }}
             >
               <Poster source={{ uri: `https://image.tmdb.org/t/p/w300/${movie.poster_path}` }} />
             </PosterBlur>
@@ -52,8 +54,22 @@ export default function Embreve() {
             <Text style={{ color: '#fff', fontWeight: 'bold' }}>Estréia: {movie.release_date.split("-").reverse().join(" ")}</Text>
             <Text style={{ color: '#fff', marginVertical: 10 }}>{movie.overview}</Text>
           </View>
-        ))}
-      </Container>
+        )}
+      />
+
+      {/* {movies.map(movie => (
+          <View key={movie.id.toString()}>
+            <PosterBlur
+              blurRadius={1}
+              source={{ uri: `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}` }}
+            >
+              <Poster source={{ uri: `https://image.tmdb.org/t/p/w300/${movie.poster_path}` }} />
+            </PosterBlur>
+            <Text style={{ color: '#fff', fontSize: 26, fontWeight: 'bold', marginTop: 10 }}>{movie.title}</Text>
+            <Text style={{ color: '#fff', fontWeight: 'bold' }}>Estréia: {movie.release_date.split("-").reverse().join(" ")}</Text>
+            <Text style={{ color: '#fff', marginVertical: 10 }}>{movie.overview}</Text>
+          </View>
+        ))} */}
     </>
   );
 };

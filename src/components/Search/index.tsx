@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Image, Text } from 'react-native';
+import { Image, Text, FlatList, View } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import api from '../../services/api';
 
@@ -7,13 +7,13 @@ const posterDefault = require('../../../assets/posterDefault.png');
 
 import {
   Header,
-  Container,
   Title,
   InputSearch,
   ResultsContainer,
   PosterContainer,
   TitleContainer,
   IconContainer,
+  IconWrapper,
 } from './styles';
 
 interface Movies {
@@ -23,7 +23,6 @@ interface Movies {
   overview: string;
   poster_path: string;
   backdrop_path: string;
-  known_for: [];
 }
 
 export default function Search() {
@@ -69,8 +68,11 @@ export default function Search() {
           value={searchQuery}
         />
       </Header>
-      <Container>
-        {movies.map((movie) => (
+
+      <FlatList
+        data={movies}
+        keyExtractor={movie => movie.id.toString()}
+        renderItem={({ item: movie }) => (
           <ResultsContainer key={movie.id.toString()}>
             <PosterContainer>
               {movie.poster_path
@@ -94,11 +96,13 @@ export default function Search() {
               </Text>
             </TitleContainer>
             <IconContainer>
-              <Icon name="play-circle-outline" color='#fff' size={38} />
+              <IconWrapper>
+                <Icon name="play" size={20} style={{ color: '#fff' }} />
+              </IconWrapper>
             </IconContainer>
           </ResultsContainer>
-        ))}
-      </Container>
+        )}
+      />
     </>
   );
 };

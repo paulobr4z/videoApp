@@ -43,8 +43,8 @@ export default function Notificacoes() {
   return (
     <>
       <PosterBlur
-        blurRadius={5}
-        source={{ uri: `https://image.tmdb.org/t/p/original/${backdrop_path}` }}
+        blurRadius={1}
+        source={{ uri: `https://image.tmdb.org/t/p/w500/${backdrop_path}` }}
       >
         <Poster source={{ uri: `https://image.tmdb.org/t/p/w300/${poster_path}` }} />
       </PosterBlur>

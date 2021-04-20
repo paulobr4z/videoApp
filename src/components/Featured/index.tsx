@@ -21,6 +21,7 @@ interface Movies {
   name: string;
   poster_path: string;
   backdrop_path: string;
+  overview: string;
 }
 
 export default function Featured() {
@@ -46,7 +47,7 @@ export default function Featured() {
 
   return (
     <Poster
-      source={{ uri: `https://image.tmdb.org/t/p/original/${movies?.backdrop_path}` }}
+      source={{ uri: `https://image.tmdb.org/t/p/w500/${movies?.backdrop_path}` }}
     >
       <Gradient
         locations={[0, 0.2, 0.6, 0.93]}
@@ -58,14 +59,14 @@ export default function Featured() {
         ]}
       >
         <ContainerTitle>
-          <TitlePoster>
+          <TitlePoster ellipsizeMode='tail' numberOfLines={1}>
             {!movies?.title ? movies?.name : movies?.title}
           </TitlePoster>
+          <Text ellipsizeMode='tail' numberOfLines={3} style={{ color: "#fff" }}>{movies?.overview}</Text>
         </ContainerTitle>
         <ButtonContainer>
           <ButtonTitle onPress={() => getDetails()}>
-            <Icon name="play" size={20} />
-            <Text style={{ color: '#000', fontSize: 16, marginLeft: 15, fontWeight: 'bold' }}>Assitir</Text>
+            <Icon name="play" size={20} style={{ color: '#fff' }} />
           </ButtonTitle>
         </ButtonContainer>
       </Gradient>

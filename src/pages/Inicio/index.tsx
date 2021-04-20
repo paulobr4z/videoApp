@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Featured from '../../components/Featured';
 import TrendingMovie from '../../components/TrendingMovie';
@@ -13,18 +13,16 @@ import { Container } from './styles';
 
 export default function Inicio() {
   return (
-    <>
-      <Container>
-        <Featured />
-        <TrendingMovie />
-        <TrendingSerie />
-        <Comedy />
-        <Romance />
-        <Action />
-        <Documentary />
-        <Horror />
-      </Container>
-    </>
+    <Container>
+      <Featured />
+      <TrendingMovie />
+      <TrendingSerie />
+      <Comedy />
+      <Romance />
+      <Action />
+      <Documentary />
+      <Horror />
+    </Container>
   );
 }
 

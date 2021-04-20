@@ -44,9 +44,17 @@ export const TitleContainer = styled.View`
 `;
 
 export const IconContainer = styled.TouchableOpacity`
-  width: 50px;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100%;
 `;
 
+export const IconWrapper = styled.View`
+  align-items: center;
+  justify-content: center;
+  background-color: #8A1A9C;
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+  margin: 0px 10px;
+`;
