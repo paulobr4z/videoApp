@@ -26,6 +26,7 @@ Tecnologias e ferramentas utilizadas no desenvolvimento do projeto:
 <ul>
   <li>React Native</li>
   <li>React Navigation</li>
+  <li>React Context</li>
   <li>Styled Components</li>
   <li>Typescript</li>
   <li>Expo</li>
