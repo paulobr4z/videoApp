@@ -1,6 +1,6 @@
 <h1>Video App</h1>
 
-O Video App tem como objetio simular um app de streaming, a tela inicial é exibido os pricipais titulos de filmes da semana, e logo mais abaixo por categoria, o app possue uma tela de pesquisa e uma tela mostrando os proximos lançamentos.
+O Vídeo App tem como objetivo simular um aplicativo de streaming de filmes e séries. Na tela inicial são exibidos os principais títulos da semana. Logo abaixo, são mostrados os títulos por categoria. O app possui ainda, uma tela de pesquisa e outra mostrando os próximos lançamentos.
 
 As informações dos filmes e series são consumidas da API [themoviedb](https://www.themoviedb.org/?language=pt-BR).
 
