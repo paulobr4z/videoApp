@@ -31,6 +31,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "O Vídeo App tem como objetivo simular um aplicativo de streaming de filmes e séries. Na tela inicial são exibidos os principais títulos da semana. Logo abaixo, são mostrados os títulos por categoria. O app possui ainda, uma tela de pesquisa e outra mostrando os próximos lançamentos.\n\nAs informações dos filmes e series são consumidas da API themoviedb.",
+    "githubUrl": "https://github.com/paulobr4z/videoApp"
   }
 }
